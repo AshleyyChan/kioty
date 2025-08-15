@@ -19,9 +19,6 @@ backend/.venv/
 logs/
 *.log
 
-# Node.js (if you later add npm in frontend)
-node_modules/
-
 # OS files
 .DS_Store
 Thumbs.db
