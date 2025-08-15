@@ -1,0 +1,261 @@
+/* ================== GENERAL ================== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f9fafb, #f1f5f9);
+  color: #212529;
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* ================== CARDS ================== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* ================== INPUTS ================== */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  color: #212529;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+input::placeholder {
+  color: #9aa0a6;
+}
+input:focus {
+  border-color: #6b7280;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+
+/* ================== BUTTONS ================== */
+button {
+  border-radius: 25px;
+  padding: 10px 22px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Add Button */
+.btn-add {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #fff;
+}
+.btn-add:hover {
+  background: linear-gradient(135deg, #4338ca, #4f46e5);
+  transform: translateY(-1px);
+}
+.btn-add:active {
+  background: linear-gradient(135deg, #3730a3, #4338ca);
+  transform: translateY(0);
+}
+
+/* Optimize Button */
+.btn-optimize {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #fff;
+}
+.btn-optimize:hover {
+  background: linear-gradient(135deg, #047857, #059669);
+  transform: translateY(-1px);
+}
+.btn-optimize:active {
+  background: linear-gradient(135deg, #065f46, #047857);
+  transform: translateY(0);
+}
+
+/* Other buttons */
+button:not(.btn-add):not(.btn-optimize) {
+  background: #6b7280;
+  color: #fff;
+}
+button:not(.btn-add):not(.btn-optimize):hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+button:not(.btn-add):not(.btn-optimize):active {
+  background: #374151;
+  transform: translateY(0);
+}
+
+/* ================== LISTS ================== */
+.list-group-item {
+  background-color: transparent;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s ease;
+  border: none;
+  padding: 10px 15px;
+}
+.list-group-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* ================== SUMMARY CARD ================== */
+.summary-card {
+  background: #f8f9fa;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  color: #212529;
+  transition: all 0.3s ease;
+}
+
+/* ================== PROGRESS BAR ================== */
+.progress {
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #e5e7eb;
+}
+.progress-bar {
+  background: linear-gradient(90deg, #6b7280, #9ca3af);
+  background-size: 200% 100%;
+  animation: wave 3s linear infinite;
+  transition: width 0.8s ease;
+}
+@keyframes wave {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ================== HISTORY ================== */
+#historySection {
+  display: none;
+  margin-bottom: 20px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.history-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.history-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* ================== DARK MODE ================== */
+body.dark {
+  background: linear-gradient(160deg, #121212, #1a1a1a 50%, #101010 100%);
+  color: #f5f5f5;
+}
+
+/* General text in dark mode */
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark label,
+body.dark span,
+body.dark li {
+  color: #f5f5f5 !important;
+}
+
+/* Force "Cart" headings to be white in dark mode */
+body.dark h1:contains("Cart"),
+body.dark h2:contains("Cart"),
+body.dark h3:contains("Cart"),
+body.dark h4:contains("Cart"),
+body.dark h5:contains("Cart"),
+body.dark h6:contains("Cart") {
+  color: #f5f5f5 !important;
+}
+
+/* Cards in dark mode */
+body.dark .card {
+  background: #1c1c1c;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* Fix cart-specific classes and IDs */
+body.dark .cart-title,
+body.dark .cart-label,
+body.dark #cartTitle {
+  color: #f5f5f5 !important;
+}
+
+/* Summary card styling */
+body.dark .summary-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #f5f5f5;
+}
+
+/* Input fields in dark mode */
+body.dark input {
+  background: #262626;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  caret-color: #fff;
+}
+
+body.dark input::placeholder {
+  color: #aaa;
+}
+
+body.dark input:focus {
+  background: #262626;
+  border-color: rgba(255,255,255,0.3);
+  outline: none;
+  color: #fff;
+}
+
+/* Buttons in dark mode */
+body.dark button {
+  background: #6b7280;
+  color: #fff;
+}
+
+/* Progress bar background */
+body.dark .progress {
+  background: #333;
+}
+
+/* ================== ITEM ANIMATIONS ================== */
+.item-slide-in {
+  animation: slideIn 0.35s ease forwards;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.item-fade-out {
+  animation: fadeOut 0.35s ease forwards;
+}
+@keyframes fadeOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.96); height: 0; margin: 0; padding: 0; }
+}
