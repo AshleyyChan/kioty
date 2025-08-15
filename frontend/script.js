@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let items = [];
   const HISTORY_KEY = "cartHistory";
-  const API_BASE = "http://127.0.0.1:5050"; // change to your backend URL if needed
+  const API_BASE = "https://kioty.onrender.com"; // change to your backend URL if needed
 
   // DOM helpers
   const $ = (id) => document.getElementById(id);
